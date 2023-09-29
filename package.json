@@ -5,7 +5,7 @@
   "main": "lib/cjs/index",
   "module": "lib/esm/index",
   "types": "lib/types/index",
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "npm@8.19.3",
   "files": [
     "lib/**/*"
   ],
@@ -14,17 +14,17 @@
   },
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build:docs": "yarn typedoc src/*.ts",
-    "build": "yarn run build-esm & yarn run build-cjs",
+    "build:docs": "npm typedoc src/*.ts",
+    "build": "npm run build-esm & npm run build-cjs",
     "build-esm": "tsc -p ./tsconfig.json",
     "build-cjs": "tsc -p ./tsconfig-cjs.json",
     "format": "prettier \"src/**/*.ts\" ",
     "format:write": "prettier --write \"src/**/*.ts\" ",
     "lint": "tslint -p tsconfig.json",
     "lint:fix": "tslint -p tsconfig.json --fix",
-    "prepare": "yarn run build",
-    "prepublishOnly": "yarn test && yarn run lint",
-    "preversion": "yarn run lint"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint"
   },
   "repository": {
     "type": "git",
